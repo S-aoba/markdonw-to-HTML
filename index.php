@@ -9,10 +9,10 @@
 <body>
   <div id="container">
     <div class="preview-config">
-        <button class="config-button">Preview</button>
-        <button class="config-button">HTML</button>
-        <button class="config-button">Highlight: ON</button>
-        <button class="config-button">Download</button>
+        <button id="preview-button" class="config-button">Preview</button>
+        <button id="html-button" class="config-button">HTML</button>
+        <button id="highlight-button" class="config-button">Highlight: ON</button>
+        <button id="download-button" class="config-button">Download</button>
     </div>
     <div class="content-container">
       <div id="editor"></div>
