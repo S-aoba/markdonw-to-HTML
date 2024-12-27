@@ -8,7 +8,7 @@ require(['vs/editor/editor.main'], function() {
     theme: 'vs-light',
     automaticLayout: true
   });
-  const preview = document.getElementById('preview');
+  const preview = document.getElementById('preview-content');
 
   editor.onDidChangeModelContent(async() => {
     const content = editor.getValue();
