@@ -35,16 +35,26 @@ require(['vs/editor/editor.main'], function() {
   const downloadButton = document.getElementById('download-button');
   downloadButton.addEventListener('click', () => {
     localStorage.setItem('mode', 'download')
+    const previewContent = document.getElementById('preview-content');
+    
+    const data = previewContent.innerHTML;
+    const blob = new Blob([data], { type: 'text/html' });  // HTMLファイルとしてBlobを作成
+    const url = URL.createObjectURL(blob);  // Blob URLを作成
+
+    // ダウンロード用リンクを作成してクリックイベントを発火
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'converted.html';  // ダウンロードするファイル名
+    a.click();  // 自動的にクリックしてダウンロードを開始
+    URL.revokeObjectURL(url);  // ダウンロード後、Blob URLを解放
   })
   const updateEditor = () => {
     editor.onDidChangeModelContent(async() => {
       const mode = localStorage.getItem('mode');
       
       if(mode === 'highlight') {
+        // TODO: Add Code highlight function
         console.log("Highlight");
-      }
-      else if(mode === 'download') {
-        console.log("download");
       }
       else {
         const content = editor.getValue();
