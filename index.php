@@ -11,7 +11,8 @@
     <div class="preview-config">
         <button id="preview-button" class="config-button">Preview</button>
         <button id="html-button" class="config-button">HTML</button>
-        <button id="highlight-button" class="config-button">Highlight: ON</button>
+        <!-- TODO: Add Code highlight function -->
+        <button id="highlight-button" class="config-button" disabled>Highlight: ON</button>
         <button id="download-button" class="config-button">Download</button>
     </div>
     <div class="content-container">
